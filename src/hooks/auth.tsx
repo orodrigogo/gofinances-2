@@ -6,8 +6,13 @@ import React, {
     useState
 } from 'react';
 
-const { CLIENT_ID } = process.env;
-const { REDIRECT_URI } = process.env;
+//const { CLIENT_ID } = process.env;
+//const { REDIRECT_URI } = process.env;
+
+const CLIENT_ID = "797746893862-u8temsbqsuma5ok5of5lgis2q8div50t.apps.googleusercontent.com"
+const REDIRECT_URI = "https://auth.expo.io/@anonymous/gofinances-d87d1e20-21f1-439f-8f1b-f22d0653a01d"
+
+
 const { expoClientId } = process.env;
 const { androidClientId } = process.env;
 const { iosClientId } = process.env;
@@ -54,6 +59,7 @@ function AuthProvider({ children }: AuthProviderProps) {
 
     const [user, setUser] = useState<UserProps>({} as UserProps);
     const [userStorageIsLoading, setUserStorageIsLoading] = useState(true);
+
 
     async function signInWithGoogle() {
         try {

@@ -1,6 +1,5 @@
 import { StatusBar } from 'react-native';
 import { ThemeProvider } from 'styled-components';
-import AppLoading from 'expo-app-loading';
 
 import 'intl';
 import 'intl/locale-data/jsonp/pt-BR';
@@ -27,7 +26,7 @@ export default function App() {
   });
 
   if (!fontsLoaded) {
-    return <AppLoading />
+    return;
   }
 
   return (

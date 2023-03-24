@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ActivityIndicator, Alert, Platform } from 'react-native';
+import { ActivityIndicator, Alert, Platform, Button } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import { useTheme } from 'styled-components';
 
@@ -22,14 +22,12 @@ import {
 } from './styles';
 
 export function SignIn() {
-
     const [isLoading, setIsLoading] = useState(false)
     const { signInWithGoogle, signInWithApple } = useAuth();
 
     const theme = useTheme();
 
     async function handleSignInWithGoogle() {
-
         try {
             setIsLoading(true);
 
@@ -80,6 +78,7 @@ export function SignIn() {
 
             <Footer>
                 <FooterWrapper>
+                    <Button title="Google" onPress={handleSignInWithGoogle} />
                     <SignInSocialButton
                         title="Entrar com Google"
                         svg={GoogleSvg}
